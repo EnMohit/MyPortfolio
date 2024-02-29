@@ -1,0 +1,25 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-button variant="brand"
+                    label={buttonLabel}
+                    onclick={handleClick}>
+    </lightning-button> 
+    <template if:true={cardVisible}>
+        <lightning-card>
+
+            <lightning-input type="search"
+                            value={searchValue}
+                            onchange={handleChange}
+                            label="Search"
+            ></lightning-input>
+
+            <lightning-datatable key-field='Id'
+                                data={data}
+                                columns={columns}
+                                hide-checkbox-column={hidecheckboxColumn}
+                                onrowselection={getSelectedRows}
+            ></lightning-datatable>
+        </lightning-card>
+    </template>
+        
+</template>
